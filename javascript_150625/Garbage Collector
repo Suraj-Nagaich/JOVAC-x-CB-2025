@@ -1,0 +1,45 @@
+The Garbage Collector (GC) is a mechanism that automatically manages memory by reclaiming memory that is no longer in use, ensuring efficient memory utilization.
+This process is crucial for preventing memory leaks and optimizing application performance.
+
+-----Key Concepts of Garbage Collection in JavaScript:
+
+**Automatic Memory Management:
+
+JavaScript automatically allocates memory when objects are created and frees it when they are no longer needed. Developers don't need to manually allocate or deallocate memory.
+
+**Reachability:
+
+The GC determines whether an object is "reachable" or not. An object is considered reachable if it can be accessed or used in the program (e.g., via variables, closures, or references).
+If an object is no longer reachable, it becomes eligible for garbage collection.
+
+**Mark-and-Sweep Algorithm:
+
+Most modern JavaScript engines (like V8 in Chrome and Node.js) use the Mark-and-Sweep algorithm:
+
+Mark: The GC starts from the root (e.g., global objects, local variables) and marks all reachable objects.
+Sweep: It then removes objects that are not marked as reachable, freeing up memory.
+
+**Common Causes of Memory Leaks:
+
+Unintended global variables: Forgetting to declare variables with let, const, or var can create global variables that persist unnecessarily.
+
+Event listeners: Not removing event listeners when they are no longer needed.
+
+Closures: Retaining references to variables in closures that are no longer required.
+
+Circular references: Objects referencing each other in a way that prevents them from being garbage collected.
+
+**Best Practices to Avoid Memory Leaks:
+
+Use let and const to declare variables.
+Remove event listeners when they are no longer needed.
+Avoid unnecessary global variables.
+Be cautious with closures and ensure they don’t retain unnecessary reference
+
+
+function createObject() {
+  let obj = { name: "Garbage Collector" };
+  console.log(obj.name); // "Garbage Collector"
+  // After this function ends, 'obj' is no longer reachable and will be garbage collected.
+}
+createObject();
