@@ -1,0 +1,37 @@
+console.log("start to make tea");
+function gas(callback){
+    console.log("on gas");
+    setTimeout(callback,1000);
+}
+function water(callback){
+    console.log("add water");
+    setTimeout(callback,2000);
+}
+function boil(callback){
+    console.log("start boil the water");
+    setTimeout(callback,3000);
+}
+function tea(callback){
+    console.log("add tea");
+    setTimeout(callback,4000);
+}
+function  milk(callback)
+{
+    console.log("add milk");
+    setTimeout(callback,5000);
+}
+function serve()
+{
+    console.log("serve in cup");
+}
+gas(()=>{
+    water(()=>{
+        boil(()=>{
+            tea(()=>{
+                milk(()=>{
+                    serve();
+                })
+            })
+        })
+   })
+})
