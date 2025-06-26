@@ -1,0 +1,21 @@
+
+Question 1 : Analyze the behaviour of the named function in expression.
+
+Behavior:
+Named function expression name is only accessible inside the function body.
+Useful for recursion or debugging.
+Use the assigned variable to call it outside.
+
+
+Question 2 :   What is Garbage Collector ?
+Ans: It is a form of automatic memory management that reclaims  memory occupied by objects that are no longer in use by a program. 
+We don’t have to clean it manually, garbage collectors do it by themselves. 
+Whenever we create variables or objects they use memory but when we stop using them and don’t remove them they will stay inside the memory and will slow down the processor.Garbage collector helps to clean up this unused data and keep the program running smoothly.
+
+
+Question 3 :  What is an event listener and why it can be slow.
+
+Ans:  An event listener is a function in JavaScript that waits for an event to occur then responds to it.
+When that action happens, the event listener runs the code written for it.
+Event Listeners can be slow Because all drawing and event-listening methods are executed in the same thread, a slow event-listener method can make the program seem unresponsive and slow to repaint itself.
+
