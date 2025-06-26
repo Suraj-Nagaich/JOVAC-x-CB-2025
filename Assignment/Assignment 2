@@ -1,0 +1,74 @@
+Question 1:Brief description of V8 engine javascript.
+
+Ans: The Chrome V8 engine is a software component that executes JavaScript code. Written in C++, it can be embedded in any C++ application, which means that despite the fact that JavaScript was written to be executed by the browsers, now it can be executed outside of it, which makes JavaScript server-side scripting possible.
+Chrome V8 is fast and powerful.
+it translates the code directly into machine code — purely digital, which means it is made up of digits. A necessary interpretation so that computers can actually understand it, then execute it or translate it or compile it.
+The V8 Engine Structure
+
+Ques 2:                                                            Report on V8 Engine 
+Ans:
+  
+		The V8 engine, developed by Google, is an open-source, high-performance JavaScript and WebAssembly engine written in C++. 
+It's the critical component that takes your human-readable JavaScript code and transforms it into lightning-fast machine code that computers can execute directly. V8 is the backbone of popular environments like Google Chrome (where it was originally designed to run) and Node.js, enabling JavaScript to power everything from interactive web applications to robust server-side systems.
+
+		         How V8 Works: A Journey from Code to Execution
+
+When you write JavaScript code, V8 takes it through a sophisticated pipeline to optimize and execute it:
+
+Parsing:The V8 engine first reads your JavaScript code and performs Lexical Analysis, breaking it down into smaller units called "tokens" (e.g., keywords, variables, operators).
+
+Interpretation (Ignition):Instead of directly executing the AST, V8's Ignition interpreter   takes the AST and converts it into bytecode. Bytecode is an intermediate, more compact representation of your code.
+
+Optimization (TurboFan):While Ignition is executing the bytecode, V8's TurboFan optimizing compiler constantly monitors the running code for "hot spots" – functions or sections of code that are executed frequently.
+When a hot spot is identified, TurboFan takes the bytecode and the feedback from Ignition and compiles it into highly optimized machine code (native code that your computer's CPU can directly understand and execute). This compilation happens in the background, without blocking the main execution thread.
+
+			          Report on Chakra JavaScript Engine
+
+This is the more prominent and widely known "Chakra." It was a JavaScript engine developed by Microsoft, initially for Internet Explorer (as the JScript engine) and then more notably for its legacy Edge web browser. Think of it as the "brain" that used to execute JavaScript code in those browsers, much like Google's V8 engine does for Chrome.
+The Chakra JavaScript engine was Microsoft's proprietary and later open-sourced technology designed to interpret and execute JavaScript code. It served as the core JavaScript runtime for their web browsers, specifically Internet Explorer and, more significantly, the legacy Microsoft Edge.
+
+Key Features and Technology (When Active)
+
+Just-In-Time (JIT) Compilation: Chakra utilized a multi-tiered JIT compilation pipeline. This meant it would start by interpreting code quickly for fast startup times, then progressively identify "hot spots" (frequently executed code) and compile them into highly optimized native machine code for maximum performance. This hybrid approach balanced quick starts with sustained speed.
+
+Background Compilation: A distinctive feature of Chakra was its ability to perform JIT compilation on a separate CPU core, in parallel with the main browser thread. This helped prevent UI freezes or stutters while complex JavaScript was being optimized, contributing to a smoother user experience.
+
+Garbage Collection: Chakra included a sophisticated garbage collector to automatically manage memory, reclaiming space no longer needed by the running application and preventing memory leaks. It used techniques like concurrent and partial collections to minimize pauses.
+
+Standards Compliance: Chakra aimed for strong compliance with ECMAScript standards (the official specification for JavaScript), supporting features from ES5.1 and providing extensive support for ES2015 (ES6) and some future proposals like Async Functions.
+                                   
+			         	Report on SpiderMonkey JavaScript Engine
+
+SpiderMonkey is the original open-source JavaScript and WebAssembly engine developed and maintained by the Mozilla Foundation. It is the powerhouse behind the Firefox web browser and has continuously evolved to meet the demands of modern web applications and beyond.
+Key Features and Architecture:
+
+Interpreter: A fast baseline interpreter that processes untyped bytecode and handles the full range of JavaScript values.
+
+Just-In-Time (JIT) Compilers: SpiderMonkey employs a multi-tier compilation pipeline to optimize code execution. As JavaScript code runs and "gets hotter" (meaning it's executed more frequently), it moves through different JIT tiers, each performing increasingly aggressive optimizations.
+
+Garbage Collector: JavaScript is a garbage-collected language, and SpiderMonkey features a precise mark-and-sweep garbage collector that automatically manages memory by identifying and freeing objects that are no longer referenced.
+
+JavaScript Parser: Converts script text into an Abstract Syntax Tree (AST) and then into bytecode (Stencil format), which is an efficient, garbage-collector-free representation. The parser often uses "lazy parsing" for functions to avoid generating full bytecodes until needed.
+
+WebAssembly (WASM) Support: SpiderMonkey also includes dedicated engines (like WASM-Baseline/Rabalder Monkey and WAS-On/Bald Monkey) for efficient execution of WebAssembly code, integrating it seamlessly with JavaScript.
+
+Self-hosting: SpiderMonkey uses JavaScript itself to implement some of its built-in functionalities, showcasing its extensibility.
+
+APIs: It provides various APIs for debugging, serialization, and embedding the engine into other applications.
+
+Ques 3:   Detailed description on Garbage Collector.
+
+Ans:  Garbage collection refers to the process of automatically reclaiming memory occupied by objects that are no longer accessible. Since JavaScript manages memory allocation dynamically, developers don’t need to manually allocate or free memory like in low-level languages (e.g., C, C++).
+
+Mark-and-Sweep Algorithm: It is a fundamental garbage collection technique used in JavaScript to manage memory by automatically reclaiming unused objects. Here's a concise explanation of how it works:
+Overview of Mark-and-Sweep Algorithm
+
+Mark Phase:
+The garbage collector starts from the "root" objects (e.g., global variables, local variables, and objects referenced in the call stack).
+It traverses all reachable objects and "marks" them as active (i.e., still in use).
+Any object not reachable from the roots is considered "garbage."
+
+Sweep Phase:
+The garbage collector scans through the heap memory.
+Any object that was not marked during the mark phase is considered unreachable and is deallocated (freed from memory).
+Inline Caching:  Inline caching is a strategy used by JavaScript engines (like V8 in Chrome) to optimize repeated property lookups or method calls on objects. It works by storing information about the structure of an object (its "shape") and the location of a property or method after the first access. This avoids repeatedly performing expensive lookups.
