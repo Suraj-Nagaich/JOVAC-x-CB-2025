@@ -1,0 +1,107 @@
+Ques 1: Find the difference between append and append child with code observation.
+
+    appendChild()
+**Accepts only Node objects (like an Element, TextNode, etc.)
+**Returns the appended node.
+**Can only append one node at a time.
+
+let parent = document.createElement("div");
+let child = document.createElement("p");
+child.textContent = "I'm a child";
+parent.appendChild(child);
+console.log(parent.innerHTML);
+
+     append()
+**Accepts both Node objects and strings.
+**Does not return the appended object.
+**Can append multiple nodes and/or strings at once
+
+let parent = document.createElement("div");
+let child = document.createElement("p");
+child.textContent = "I'm a child";
+parent.append("Text before ", child, " and after");
+console.log(parent.innerHTML); 
+
+Ques 2:  Find the difference between event.target and event.currenttarget with code observation.
+
+      event.target
+** The actual element that was clicked
+** It is useful for event delegation
+
+      event.currentTarget
+** The element the event listener is attached to
+** it is useful for knowing where the handler is bound
+
+code: 
+        document.getElementById("parent").addEventListener("click", function (event) {
+       console.log("event.target:", event.target);
+       console.log("event.currentTarget:", event.currentTarget);
+});
+
+Output:
+        event.target: <button id="child">Click Me</button>
+        event.currentTarget: <div id="parent">...</div>
+
+Ques 3: How to perform debouncing by Set Interval? Show with the help of code observation.
+
+            let lastTypedTime = Date.now();
+            let debounceDelay = 500;
+            let intervalId = null;
+        document.getElementById("search").addEventListener("input", (e) => {
+         lastTypedTime = Date.now(); 
+         if (!intervalId) {
+           intervalId = setInterval(() => {
+            if (Date.now() - lastTypedTime >= debounceDelay) {
+                 console.log("Debounced input (setInterval):", e.target.value);
+                     clearInterval(intervalId);
+                        intervalId = null;
+      }
+    }, 100); 
+  }
+});
+
+Ques 4: Analyse and show the difference between script, async and defer practically.
+   
+                 <script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Normal Script</title>
+  <script>
+    console.log("My name is Suraj Nagaich");
+    alert("This is a blocking <script>");
+  </script>
+</head>
+<body>
+  <h1>Hello World</h1>
+</body>
+</html>
+
+                <script async>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Async Script</title>
+  <script async src="suraj.js"></script>
+</head>
+<body>
+  <h1>Hello World</h1>
+</body>
+</html>
+
+                  <Script Defer>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Defer Script Example</title>
+  <script src="defer-script.js" defer></script>
+</head>
+<body>
+  <h1 id="heading">Hello, World!</h1>
+</body>
+</html>
+
+                   
