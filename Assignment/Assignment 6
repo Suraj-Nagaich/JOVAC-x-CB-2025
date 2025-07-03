@@ -1,8 +1,16 @@
 Ques 1:  find the output if we change the value of var in the module, imported in the main file.
 
-Ans:  
+Ans:      myModule.js
+      let myVar = 'original';
+         module.exports = {
+          myVar
+};
 
-
+           main.js
+const module = require('./myModule');
+console.log(module.myVar); 
+module.myVar = 'changed'; 
+console.log(module.myVar);
 
 Ques 2:  Find the difference b/w Asynchronous and synchronous, strict and non -strict in mjs.
 
@@ -41,7 +49,14 @@ Allows bad practices, e.g., assigning undeclared variables.
 
 Ques 3:  Find the difference b/w writing myName and myName:myName in module export.
 
-Ans:  
+Ans:     const myName = 'Suraj';
+        module.exports = {
+      myName: myName
+};
 
+const nameValue = 'Alice';
+module.exports = {
+  myName: nameValue 
+};
 
 
