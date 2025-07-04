@@ -12,6 +12,12 @@ console.log(module.myVar);
 module.myVar = 'changed'; 
 console.log(module.myVar);
 
+Directly imported variables are read-only bindings.
+You can’t reassign them in the importing file.
+If it's a mutable object/array, you can change its contents.
+Use getter/setter functions if you want to dynamically change and access values across modules.
+
+
 Ques 2:  Find the difference b/w Asynchronous and synchronous, strict and non -strict in mjs.
 
 Ans:           Synchronous Code
