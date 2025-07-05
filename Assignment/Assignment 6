@@ -21,6 +21,7 @@ Use getter/setter functions if you want to dynamically change and access values 
 Ques 2:  Find the difference b/w Asynchronous and synchronous, strict and non -strict in mjs.
 
 Ans:           Synchronous Code
+
      Executes line by line, blocking the thread until each operation is complete.
      Each line waits for the previous one to finish.
 
@@ -29,6 +30,7 @@ Ans:           Synchronous Code
        console.log('End');
 
                  Asynchronous Code
+
 let the program continue without waiting for certain operations.
 It is Often used with setTimeout, Promise, async/await, etc.
 
@@ -39,13 +41,16 @@ It is Often used with setTimeout, Promise, async/await, etc.
 console.log('End');
 
                      Strict Mode
+
 Prevents the use of bad practices.
 Introduced with 'use strict' in .js files.
 
      undeclaredVar = 5; 
      console.log(undeclaredVar);
 
+
                     Non-Strict Mode
+
 Available in old-style scripts.
 Allows bad practices, e.g., assigning undeclared variables.
 
