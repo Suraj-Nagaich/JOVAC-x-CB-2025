@@ -69,5 +69,3 @@ const nameValue = 'Alice';
 module.exports = {
   myName: nameValue 
 };
-
-
