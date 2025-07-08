@@ -72,3 +72,4 @@ Sweep Phase:
 The garbage collector scans through the heap memory.
 Any object that was not marked during the mark phase is considered unreachable and is deallocated (freed from memory).
 Inline Caching:  Inline caching is a strategy used by JavaScript engines (like V8 in Chrome) to optimize repeated property lookups or method calls on objects. It works by storing information about the structure of an object (its "shape") and the location of a property or method after the first access. This avoids repeatedly performing expensive lookups.
+
