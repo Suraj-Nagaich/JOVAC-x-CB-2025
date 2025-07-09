@@ -1,4 +1,3 @@
-
 Question 1 : Analyze the behaviour of the named function in expression.
 
 Behavior:
@@ -18,4 +17,3 @@ Question 3 :  What is an event listener and why it can be slow.
 Ans:  An event listener is a function in JavaScript that waits for an event to occur then responds to it.
 When that action happens, the event listener runs the code written for it.
 Event Listeners can be slow Because all drawing and event-listening methods are executed in the same thread, a slow event-listener method can make the program seem unresponsive and slow to repaint itself.
-
