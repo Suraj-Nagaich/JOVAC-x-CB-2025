@@ -23,3 +23,15 @@ const PORT = 4000
 app.listen(PORT,function() {
     console.log("server started on post : ",PORT);
 })
+
+const app = require("./src/app")
+const connect = require("./src/db/db")
+
+const PORT = 4000
+
+
+app.listen(PORT, ()=>{
+    connect()
+    console.log(`server started on port no : ${PORT}`);
+    
+})
