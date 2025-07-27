@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/productDetail.css">
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <img src="<%= product.image %>" alt="">
+        </div>
+        <div class="right">
+            <div class="top"><br>
+                <h1><%= product.title %></h1><br><br>
+                <p><%= product.description %></p><br>
+                <h1><%= product.category %></h1><br>
+                <h2> Price : <%= product.price %></h2>
+            </div>
+            <div class="bottom">
+                <button><a href="/products/update/<%= product._id %>">Update</a></button>
+                <button><a href="/products/delete/<%= product._id %>" >Delete</a></button>
+            </div>
+        </div>
+    </div>
+</body> 
+</html>
