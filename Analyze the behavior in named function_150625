@@ -2,4 +2,3 @@ let a=23;
 let b=45;
 let c=a*b;
 console.log(c);
-
